@@ -25,6 +25,17 @@ class Jogador {
       }
     });
   }
+
+  insere(jogador, res) {
+    const sql = "INSERT INTO jogadores SET ?";
+    connect.query(sql, jogador, (erro, result) => {
+      if (erro) {
+        res.status(400).json(erro);
+      } else {
+        res.status(200).json({ id: result.insertId });
+      }
+    });
+  }
 }
 
 module.exports = new Jogador();

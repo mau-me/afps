@@ -10,4 +10,9 @@ module.exports = (app) => {
 
     Jogador.buscaPorId(id, res);
   });
+
+  app.post("/api/jogadores", (req, res) => {
+    const jogador = req.body;
+    Jogador.insere(jogador, res);
+  });
 };
