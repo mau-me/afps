@@ -5,7 +5,7 @@ module.exports = (app) => {
     Jogador.buscaTodos(res);
   });
 
-  app.get("/api/jogadores:id", (req, res) => {
+  app.get("/api/jogadores/:id", (req, res) => {
     const id = parseInt(req.params.id);
 
     Jogador.buscaPorId(id, res);

@@ -16,7 +16,7 @@ class Jogador {
   buscaPorId(id, res) {
     const sql = "SELECT * FROM jogadores WHERE id = ?";
 
-    conexao.query(sql, id, (erro, resultados) => {
+    connect.query(sql, id, (erro, resultados) => {
       const usuario = resultados[0];
       if (erro) {
         res.status(400).json(erro);
