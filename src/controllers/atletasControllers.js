@@ -2,9 +2,12 @@ import atletas from "../models/Atleta.js";
 
 class AtletaController {
   static listarAtletas(req, res) {
-    atletas.find((err, atletas) => {
-      res.json(atletas);
-    });
+    atletas
+      .find({})
+      .sort({ nome: 1 })
+      .exec((err, atletas) => {
+        res.json(atletas);
+      });
   }
 
   static listarAtletaPorId(req, res) {
