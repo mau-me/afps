@@ -1,31 +1,19 @@
 {
-  "name": "afpi_api",
+  "name": "afps",
   "version": "1.0.0",
-  "description": "API do sistema da associação de futebol de porto dos santos",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Mau-Me/afps.git"
-  },
+  "description": "API da afps",
   "main": "server.js",
-  "type": "module",
-  "author": {
-    "name": "Mauricio Souza Menezes <Mau-Me>",
-    "email": "mauriciosm95@gmail.com",
-    "url": "http://mau-me.github.io/"
-  },
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
-    "express": "^4.18.1",
-    "mongoose": "^6.3.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mau-me/afps.git"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+  "author": "mau-me, maurimenezes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mau-me/afps/issues"
+  },
+  "homepage": "https://github.com/mau-me/afps#readme"
 }
