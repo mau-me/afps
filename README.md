@@ -17,7 +17,7 @@
 ---
 
 <p align="center"> API do sistema afpi.
-    <br> 
+    <br>
 </p>
 
 ## 📝 Getting Started
@@ -34,7 +34,22 @@ API construida para sistema de controle da associação de futebol.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+### Configuração do ambiente
+
+Este projeto requer o uso de variáveis de ambiente para a configuração correta. Siga as etapas abaixo para configurar seu ambiente:
+
+1. Crie um arquivo `.env` na raiz do projeto.
+2. Copie o conteúdo do arquivo `.env.example` para o arquivo `.env`.
+3. Preencha as variáveis de ambiente com os valores corretos para o seu ambiente.
+
+Certifique-se de nunca compartilhar informações sensíveis no seu repositório.
+
+Exemplo de conteúdo do arquivo `.env`:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=123456
+DB_DATABASE=my_database
 
 ### Prerequisites
 
@@ -58,7 +73,7 @@ npm start
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
+- [MariaDB](https://mariadb.org/) - Database
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 
