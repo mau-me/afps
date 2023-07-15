@@ -14,6 +14,32 @@ exports.obterTodosUsuarios = (req, res) => {
   });
 };
 
+// Obter jogadores com suas posições
+exports.obterJogadores = (req, res) => {
+  Usuario.obterJogadores((err, jogadores) => {
+    if (err) {
+      console.error("Erro ao obter os jogadores: " + err.message);
+      res.status(500).json({ error: "Erro ao obter os jogadores." });
+      return;
+    }
+
+    res.json(jogadores);
+  });
+};
+
+// Obter outros membros não atletas
+exports.obterOutrosMembros = (req, res) => {
+  Usuario.obterOutrosMembros((err, membros) => {
+    if (err) {
+      console.error("Erro ao obter os membros: " + err.message);
+      res.status(500).json({ error: "Erro ao obter os membros." });
+      return;
+    }
+
+    res.json(membros);
+  });
+};
+
 // Criar um usuário
 exports.criarUsuario = (req, res) => {
   const { nome, data_nascimento, vulgo, telefone, email, posicao, tipo } =
