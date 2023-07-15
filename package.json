@@ -4,6 +4,7 @@
   "description": "API da afps",
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/mau-me/afps/issues"
   },
-  "homepage": "https://github.com/mau-me/afps#readme"
+  "homepage": "https://github.com/mau-me/afps#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
