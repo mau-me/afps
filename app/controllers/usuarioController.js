@@ -1,21 +1,17 @@
 const Usuario = require("../models/usuarioModel");
 
+const usuarioController = {};
+
 // Controlador relacionado aos usuários
 
 // Obter todos os usuários
-exports.obterTodosUsuarios = (req, res) => {
-  Usuario.obterTodosUsuarios((err, usuarios) => {
-    if (err) {
-      console.error("Erro ao obter os usuários: " + err.message);
-      res.status(500).json({ error: "Erro ao obter os usuários." });
-      return;
-    }
-    res.json(usuarios);
-  });
+usuarioController.obterTodosUsuarios = async (req, res) => {
+  const usuarios = await Usuario.obterTodosUsuarios();
+  res.json(usuarios);
 };
 
 // Obter jogadores com suas posições
-exports.obterJogadores = (req, res) => {
+usuarioController.obterJogadores = (req, res) => {
   Usuario.obterJogadores((err, jogadores) => {
     if (err) {
       console.error("Erro ao obter os jogadores: " + err.message);
@@ -28,7 +24,7 @@ exports.obterJogadores = (req, res) => {
 };
 
 // Obter outros membros não atletas
-exports.obterOutrosMembros = (req, res) => {
+usuarioController.obterOutrosMembros = (req, res) => {
   Usuario.obterOutrosMembros((err, membros) => {
     if (err) {
       console.error("Erro ao obter os membros: " + err.message);
@@ -41,7 +37,7 @@ exports.obterOutrosMembros = (req, res) => {
 };
 
 // Criar um usuário
-exports.criarUsuario = (req, res) => {
+usuarioController.criarUsuario = (req, res) => {
   const { nome, data_nascimento, vulgo, telefone, email, posicao, tipo } =
     req.body;
 
@@ -67,7 +63,7 @@ exports.criarUsuario = (req, res) => {
 };
 
 // Obter um usuário por ID
-exports.obterUsuarioPorId = (req, res) => {
+usuarioController.obterUsuarioPorId = (req, res) => {
   const usuarioId = req.params.id;
 
   Usuario.obterUsuarioPorId(usuarioId, (err, usuario) => {
@@ -87,7 +83,7 @@ exports.obterUsuarioPorId = (req, res) => {
 };
 
 // Excluir um usuário por ID
-exports.excluirUsuarioPorId = (req, res) => {
+usuarioController.excluirUsuarioPorId = (req, res) => {
   const usuarioId = req.params.id;
 
   Usuario.excluirUsuarioPorId(usuarioId, (err, result) => {
@@ -105,3 +101,5 @@ exports.excluirUsuarioPorId = (req, res) => {
     res.json({ message: "Usuário excluído com sucesso." });
   });
 };
+
+module.exports = usuarioController;
