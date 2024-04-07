@@ -5,7 +5,7 @@ const usuarioRoutes = require("./usuarioRoutes");
 const mensalidadeRoutes = require("./mensalidadeRoutes");
 const partidasRoutes = require("./partidasRoutes.js");
 
-router.use("/", (req, res) => {
+router.get("/", (req, res) => {
   res.send("AFPS");
 });
 router.use("/usuarios", usuarioRoutes);
